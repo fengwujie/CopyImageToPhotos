@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVX-R2-3j1" userLabel="btnCopyImage">
-                                <rect key="frame" x="95" y="60" width="130" height="130"/>
+                                <rect key="frame" x="95" y="88" width="130" height="130"/>
                                 <color key="backgroundColor" red="0.069067694690000001" green="1" blue="0.006694965594" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="oCn-GC-cbv"/>
@@ -30,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djj-sK-bDD" userLabel="btnClearImage">
-                                <rect key="frame" x="95" y="230" width="130" height="130"/>
+                                <rect key="frame" x="95" y="248" width="130" height="130"/>
                                 <color key="backgroundColor" red="0.48534166340000001" green="0.73023550859999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="HMC-Ex-FXc"/>
@@ -41,16 +42,32 @@
                                     <action selector="btnClearImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPU-pE-jPc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rh-Lq-DIo" userLabel="labMsg">
+                                <rect key="frame" x="24" y="28" width="272" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CII-9S-guB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UVX-R2-3j1" firstAttribute="top" secondItem="5rh-Lq-DIo" secondAttribute="bottom" constant="20" id="2LX-Va-jw7"/>
+                            <constraint firstItem="5rh-Lq-DIo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="JxL-vz-C9a"/>
                             <constraint firstItem="djj-sK-bDD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NKj-IQ-DPg"/>
-                            <constraint firstItem="djj-sK-bDD" firstAttribute="top" secondItem="UVX-R2-3j1" secondAttribute="bottom" constant="40" id="ezg-C4-uxQ"/>
+                            <constraint firstItem="5rh-Lq-DIo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Xly-Jq-ZwC"/>
+                            <constraint firstItem="djj-sK-bDD" firstAttribute="top" secondItem="UVX-R2-3j1" secondAttribute="bottom" constant="30" id="ezg-C4-uxQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5rh-Lq-DIo" secondAttribute="trailing" constant="8" id="jXl-mD-ZGS"/>
                             <constraint firstItem="UVX-R2-3j1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lWj-wr-ZPt"/>
-                            <constraint firstItem="UVX-R2-3j1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="vu9-Ei-i6o"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="labMsg" destination="5rh-Lq-DIo" id="fG3-04-Wat"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
